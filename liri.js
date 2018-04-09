@@ -33,7 +33,7 @@ var parsedData;
     access_token_secret: 'ukhDy24IZ9Ne40OUFrH4GCTiMsBxLvMbxjtpkv7ZjlYI6'
     
   });*/
-   
+ /*  
 function twitterData() {
     //User authentication credentials
     var client = new Twitter(keys.twitter);
@@ -83,8 +83,9 @@ function twitterData() {
 
 
 } 
+*/
 
-/*
+
 function spotifyData(){
     //If the user inputs a song....
     if(process.argv.length >=4 || typeof userChoice === 'string') {
@@ -101,7 +102,7 @@ function spotifyData(){
           });
     }
     //If user doesn't input a song....
-    else if(process.argv.length < 4) {
+        else if(process.argv.length < 4) {
           //Displays default song data
           spotify.search({type:'track', query: "The Sign Ace of Base" }, function(err, data){
               //if there is no error then...
@@ -129,9 +130,8 @@ function displaySpotify(data){
   console.log('Album ' + album);
   console.log('Song Preview: ' + songPreview);
 }
-*/
 
-function movieThis(){
+function movieData(){
     if(process.argv.length >=4 || typeof userChoice === 'string')    
         
         request(' http://www.omdbapi.com/?i=tt3896198&apikey=6afda331'
@@ -149,7 +149,8 @@ function movieThis(){
         });
     else if(process.argv.length < 4){
         
-        request('http://www.omdbapi.com/?t=' + 'Mr. Nobody' +'&tomatoes=true',function(error, response, body){
+        request('http://www.omdbapi.com/?i=tt3896198&apikey=6afda331'
+            + 'Mr. Nobody' +'&tomatoes=true',function(error, response, body){
             
             if (!error && response.statusCode == 200) {
                   parsedData = JSON.parse(body);
